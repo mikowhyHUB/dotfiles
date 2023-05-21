@@ -1,5 +1,5 @@
 -- import nvim-tree plugin safely
-local setup, nvimtree = pcall(require, "nvim-tree")
+local setup, nvimtree = pcall(XD, "nvim-tree")
 if not setup then
   return
 end
@@ -59,7 +59,7 @@ local function open_nvim_tree(data)
   end
 
   -- open the tree
-  require("nvim-tree.api").tree.open()
+  XD("nvim-tree.api").tree.open()
 end
 
 vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })

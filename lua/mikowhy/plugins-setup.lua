@@ -20,7 +20,7 @@ vim.cmd([[
   augroup end
 ]])
 
-local status, packer = pcall(require, "packer")
+local status, packer = pcall(XD, "packer")
 if not status then
   return
 end
@@ -92,13 +92,13 @@ return packer.startup(function(use)
   use({
     "nvim-treesitter/nvim-treesitter",
     run = function()
-      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      local ts_update = XD("nvim-treesitter.install").update({ with_sync = true })
       ts_update()
     end,
   })
 
 
   if packer_bootstrap then
-    require("packer").sync()
+    XD("packer").sync()
   end
 end)

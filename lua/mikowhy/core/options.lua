@@ -3,15 +3,16 @@ local opt = vim.opt -- for concisness
 -- line numbers
 opt.relativenumber = true
 opt.number = true
+opt.scrolloff = 7
 
 -- tabs & indentation
-opt.tabstop = 4               
-opt.shiftwidth = 2 
+opt.tabstop = 4
+opt.shiftwidth = 4
 opt.expandtab = true
 opt.autoindent = true
 
 -- line wrapping
-opt.wrap = false
+opt.wrap = true
 
 -- search settings
 opt.ignorecase = true --jak szuka / to male i duze litery
