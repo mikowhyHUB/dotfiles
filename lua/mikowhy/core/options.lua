@@ -31,6 +31,8 @@ opt.backspace = "indent,eol,start"
 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- umozliwia kopiowanie plikow z nvima do systemu
+--set clipboard+="unnamedplus"
+
 
 -- split windowis
 opt.splitright = true
