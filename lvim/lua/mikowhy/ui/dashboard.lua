@@ -16,6 +16,7 @@ local plugins = ""
 local date = ""
 if vim.fn.has("linux") == 1 or vim.fn.has("mac") == 1 then
 	-- -- this no longer works with packer, need to modify to work with lazy.nvim
+    -- dunno wat is this
 	-- local handle = io.popen 'fd -d 2 . $HOME"/.local/share/lunarvim/site/pack/packer" | grep pack | wc -l | tr -d "\n" '
 	-- plugins = handle:read "*a"
 	-- handle:close()
