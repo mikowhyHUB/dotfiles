@@ -90,13 +90,14 @@ end
 local buttons = {
 	type = "group",
 	val = {
-		button("f", " " .. kind.cmp_kind.Folder .. " Explore", ":Telescope find_files<CR>"),
+		button("s", " " .. kind.cmp_kind.Default .. " Live grep", ":Telescope live_grep<CR>"),
+		button("f", " " .. kind.cmp_kind.Folder .. " Find files", ":Telescope find_files<CR>"),
 		button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
-		button("s", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
+		button("t", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
 		button(
 			"g",
 			" " .. kind.icons.git .. " Git Status",
-			":lua require('lvim.core.terminal')._exec_toggle({cmd = 'lazygit', count = 1, direction = 'float'})<CR>"
+			":ToggleTerm <CR> git status <CR>"
 		),
 		button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
 		button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),

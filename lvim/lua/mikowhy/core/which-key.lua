@@ -2,7 +2,7 @@ local kind = require('mikowhy.ui.kind')
 
 local wk = lvim.builtin.which_key
 
-wk.mappings["a"] = { ":Alpha<cr>", kind.icons.screen .. " Dashboard" }
+-- wk.mappings["a"] = { ":Alpha<cr>", kind.icons.screen .. " Dashboard" }
 
 wk.mappings["S"] = {
     name = " persistence.nvim",
@@ -41,17 +41,20 @@ wk.mappings["W"] = {
     h = { '<C-w>|', 'Maximize window horizontally (|)' },
     v = { '<C-w>_', 'Maximize window vertically (_)' },
     ['='] = { '<C-w>=', 'Resize windows equally' },
-    s = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
+    t = { ":lua require('telescope-tabs').list_tabs()<cr>", 'Search Tabs' },
+    s = { "<C-w>v", "Splituje wertykalnie" }, -- split window vertically
+    x={ ":close<CR>","Zamyka aktualnego splita" }, -- close current split window
+-- vim.set("n", "<leader>sh", "<C-w>s", { desc = "Splituje horyzontalnie" }) -- split window horizontally
 }
 
-wk.mappings["G"] = {
-    name = ' ' .. kind.icons.hint .. " Github Copilot",
-    a = { ":lua require('copilot.suggestion').accept()<cr>", "Accept" },
-    n = { ":lua require('copilot.suggestion').next()<cr>", "Next" },
-    N = { ":lua require('copilot.suggestion').prev()<cr>", "Prev" },
-    d = { ":lua require('copilot.suggestion').dismiss()<cr>", "Dismiss" },
-    t = { ":lua require('copilot.suggestion').toggle_auto_trigger()<cr>", "Toggle Auto Trigger" },
-}
+-- wk.mappings["G"] = {
+--     name = ' ' .. kind.icons.hint .. " Github Copilot",
+--     a = { ":lua require('copilot.suggestion').accept()<cr>", "Accept" },
+--     n = { ":lua require('copilot.suggestion').next()<cr>", "Next" },
+--     N = { ":lua require('copilot.suggestion').prev()<cr>", "Prev" },
+--     d = { ":lua require('copilot.suggestion').dismiss()<cr>", "Dismiss" },
+--     t = { ":lua require('copilot.suggestion').toggle_auto_trigger()<cr>", "Toggle Auto Trigger" },
+-- }
 
 wk.mappings['x'] = { ":xa<cr>", "Save All and Quit", }
 
@@ -60,3 +63,6 @@ wk.mappings["t"] = {
     p = { ':Telescope projects<cr>', 'Projects' }, -- requires telescope-project.nvim plugin
     r = { ':Telescope resume<cr>', 'Resume' },
 }
+-- historia zmian
+wk.mappings["u"] = { ':UndotreeToggle<cr>', 'Changing History'}
+

@@ -18,7 +18,7 @@ local themes = {
 }
 
 -- lvim.transparent_window = true --crashuje
-lvim.colorscheme = themes.desert
+lvim.colorscheme = themes.gruvbox_material
 
 local extra_opts = {
 	sonokai = {

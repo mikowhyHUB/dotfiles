@@ -18,6 +18,7 @@ lvim.keys.insert_mode["<C-h>"] = "<Left>"
 lvim.keys.insert_mode["<C-l>"] = "<Right>"
 lvim.keys.insert_mode["<C-j>"] = "<Down>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
+
 -- w visual mode mozessz przesuwac zaznaczone linie gora dol
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -44,3 +45,7 @@ lvim.lsp.buffer_mappings.normal_mode["gf"] = {
   ":Telescope frecency<cr>",
   kind.cmp_kind.Reference .. " Telescope Frecency"
 }
+
+lvim.keys.normal_mode['<leader>c'] = require('osc52').copy_operator
+-- vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+lvim.keys.visual_mode['<leader>c'] = require('osc52').copy_visual

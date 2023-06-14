@@ -3,3 +3,5 @@ chad/
 coc/
 config-martinez/
 nvim.appimage
+lvim/lazy-lock.json
+lvim/session/
