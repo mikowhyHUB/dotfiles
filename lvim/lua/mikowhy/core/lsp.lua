@@ -33,7 +33,7 @@ local pyright_opts = {
         autoImportCompletions = true,
         autoSearchPaths = true,
         diagnosticMode = "workspace", -- openFilesOnly, workspace
-        typeCheckingMode = "off", -- off, basic, strict
+        typeCheckingMode = "basic", -- off, basic, strict || jak robimy off to czerwone errory wylaczamy
         useLibraryCodeForTypes = true
       }
     }
@@ -41,7 +41,9 @@ local pyright_opts = {
 }
 
 require("lvim.lsp.manager").setup("pyright", pyright_opts)
-
+-- test z yt: https://www.youtube.com/watch?v=LPrv2q2L73Q ~doesnt work
+local opts= {}
+require("lvim.lsp.manager").setup("autopep8", opts)
 
 -- Typescript config using typescript.nvim
 -- ts.setup({
