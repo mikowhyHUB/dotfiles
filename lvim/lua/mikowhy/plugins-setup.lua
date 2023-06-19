@@ -9,6 +9,7 @@ lvim.plugins = {
     { "lunarvim/horizon.nvim" },
     { "tomasr/molokai" },
     { "ayu-theme/ayu-vim" },
+    {"EdenEast/nightfox.nvim"},
 
     {
         -- wyswietla wszystkie bledy w pliku
@@ -23,6 +24,11 @@ lvim.plugins = {
             require("todo-comments").setup()
         end
     },
+    {
+        "yioneko/nvim-yati",
+        -- tag = "*",
+        dependencies = "nvim-treesitter/nvim-treesitter"
+    },
     { -- kopiowanie
         "ojroques/nvim-osc52"
     },
@@ -31,18 +37,6 @@ lvim.plugins = {
         "mbbill/undotree"
     },
 
-    -- przywraca poprzednia sesje
-    -- { -- wywala blad a jez z lunar.com
-    --   "folke/persistence.nvim",
-    --     event = "BufReadPre", -- this will only start session saving when an actual file was opened
-    --     module = "persistence",
-    --     config = function()
-    --       require("persistence").setup {
-    --         dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-    --         options = { "buffers", "curdir", "tabpages", "winsize" },
-    --       }
-    --   end,
-    -- },
     {
         "folke/persistence.nvim",
         -- event = "BufReadPre",
@@ -95,6 +89,14 @@ lvim.plugins = {
     --     end,
     --   },
     -- }
+    -- nvim v0.7.2
+    -- { doesnt work
+    --     "kdheepak/lazygit.nvim",
+    --     -- optional for floating window border decoration
+    --     requires = {
+    --         "nvim-lua/plenary.nvim",
+    --     },
+    -- },
 
     table.insert(lvim.plugins, {
         "zbirenbaum/copilot-cmp",

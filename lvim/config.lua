@@ -10,5 +10,6 @@ reload("mikowhy.core.keymap")
 reload("mikowhy.core.which-key")
 reload("mikowhy.ui.statusline")
 reload("mikowhy.core.lsp")
+reload("mikowhy.core.treesitter")
 
 

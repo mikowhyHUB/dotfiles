@@ -15,12 +15,29 @@ local themes = {
 	sonokai = "sonokai",
 	edge = "edge",
 	ayu = "ayu",
+    nightfox = "nightfox",
+    terafox = "terafox",
+    carbonfox = "carbonfox",
+    dayfox = "dayfox",
+    nordfox = "nordfox",
 }
 
 -- lvim.transparent_window = true --crashuje
-lvim.colorscheme = themes.gruvbox_material
+lvim.colorscheme = themes.nightfox
 
 local extra_opts = {
+    nightfox = {
+        options = {
+            colorblind = {
+                enable = true,
+                -- simulate_only = true,
+                severity = {
+                    protan = 1
+                    -- tritan = 1
+                },
+            },
+        },
+    },
 	sonokai = {
 		styles = {
 			espresso = "espresso",

@@ -38,7 +38,7 @@ lvim.lsp.buffer_mappings.normal_mode["gd"] = {
 
 lvim.lsp.buffer_mappings.normal_mode["gD"] = {
   ":lua vim.lsp.buf.type_definition()<cr>",
-  kind.cmp_kind.Reference .. " Type Definition"
+
 }
 -- nie dziala
 lvim.lsp.buffer_mappings.normal_mode["gf"] = {
@@ -47,5 +47,7 @@ lvim.lsp.buffer_mappings.normal_mode["gf"] = {
 }
 
 lvim.keys.normal_mode['<leader>c'] = require('osc52').copy_operator
+-- lvim.keys.normal_mode['<leader>cc', '<leader>c_', {remap = true}] = require('osc52').copy_operator
 -- vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
 lvim.keys.visual_mode['<leader>c'] = require('osc52').copy_visual
+
