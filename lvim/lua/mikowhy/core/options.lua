@@ -30,7 +30,7 @@ opt.signcolumn = "yes"
 opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- umozliwia kopiowanie plikow z nvima do systemu
+opt.clipboard:append("unnamedplus")
 
 -- split windowis
 opt.splitright = true
@@ -38,31 +38,3 @@ opt.splitbelow = true
 
 opt.iskeyword:append("-")
 
-lvim.builtin.treesitter.ensure_installed = {
-	"bash",
-	"c",
-	"javascript",
-	"json",
-	"lua",
-	"python",
-	"typescript",
-	"vue",
-	"css",
-	"rust",
-	"pug",
-	"yaml",
-}
-
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = true
-lvim.builtin.nvimtree.setup.filters.custom = {}
-
-lvim.builtin.project.detection_methods = { "lsp", "pattern" }
-lvim.builtin.project.patterns = {
-	".git",
-	"package-lock.json",
-	"yarn.lock",
-	"package.json",
-	"requirements.txt",
-}

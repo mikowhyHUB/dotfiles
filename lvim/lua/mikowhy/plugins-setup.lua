@@ -9,6 +9,7 @@ lvim.plugins = {
     { "lunarvim/horizon.nvim" },
     { "tomasr/molokai" },
     { "ayu-theme/ayu-vim" },
+    {"EdenEast/nightfox.nvim"},
 
     {
         -- wyswietla wszystkie bledy w pliku
@@ -22,6 +23,11 @@ lvim.plugins = {
         config = function()
             require("todo-comments").setup()
         end
+    },
+    {
+        "yioneko/nvim-yati",
+        -- tag = "*",
+        dependencies = "nvim-treesitter/nvim-treesitter"
     },
     { -- kopiowanie
         "ojroques/nvim-osc52"
