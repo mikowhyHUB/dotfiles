@@ -45,6 +45,8 @@ wk.mappings["W"] = {
     s = { "<C-w>v", "Splituje wertykalnie" }, -- split window vertically
     x={ ":close<CR>","Zamyka aktualnego splita" }, -- close current split window
 -- vim.set("n", "<leader>sh", "<C-w>s", { desc = "Splituje horyzontalnie" }) -- split window horizontally
+    m = {":CellularAutomaton make_it_rain<CR>", "Make it rain"},
+    n = {":CellularAutomaton game_of_lide<CR>", "Game of life"},
 }
 
 -- wk.mappings["G"] = {

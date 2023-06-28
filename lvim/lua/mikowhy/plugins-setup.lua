@@ -9,12 +9,31 @@ lvim.plugins = {
     { "lunarvim/horizon.nvim" },
     { "tomasr/molokai" },
     { "ayu-theme/ayu-vim" },
-    {"EdenEast/nightfox.nvim"},
+    { "EdenEast/nightfox.nvim" },
 
     {
         -- wyswietla wszystkie bledy w pliku
         "folke/trouble.nvim",
         cmd = "TroubleToggle",
+    },
+
+    {
+        "FotiadisM/tabset.nvim",
+        config = function()
+            require("tabset").setup()
+        end
+    },
+    { -- nauka obslugi vima
+        "m4xshen/hardtime.nvim",
+        event = "VeryLazy",
+        opts = {
+            disable_mouse = false,
+            hint = true,
+            notification = true
+        }
+    },
+    { --bajer wizualny
+        "eandrju/cellular-automaton.nvim"
     },
 
     {
@@ -29,11 +48,11 @@ lvim.plugins = {
         -- tag = "*",
         dependencies = "nvim-treesitter/nvim-treesitter"
     },
-    { -- kopiowanie
+    {
         "ojroques/nvim-osc52"
     },
 
-    {	-- historia zmian
+    { -- historia zmian
         "mbbill/undotree"
     },
 
@@ -53,7 +72,7 @@ lvim.plugins = {
         cmd = 'CodeActionMenu',
     },
 
-    { "tpope/vim-surround" },     -- automatyczne zamykanie nawiasow itp
+    { "tpope/vim-surround" }, -- automatyczne zamykanie nawiasow itp
     -- { "felipec/vim-sanegx", event = "BufRead" }, -- otwiera url (gx). Moze kiedys sie przyda
     {
         "windwp/nvim-ts-autotag",
@@ -64,6 +83,7 @@ lvim.plugins = {
     { "tpope/vim-repeat" }, -- cos robi z pluginami jak sie kropke nacisnie
 
     -- { "ThePrimeagen/harpoon" },
+
     -- { -- poruszanie sie po slowach
     --   'phaazon/hop.nvim',
     --   branch = 'v2',
@@ -71,13 +91,13 @@ lvim.plugins = {
     --     require('hop').setup()
     --   end
     -- },
-    { "kkharji/sqlite.lua" }, -- potrzebny do frecency 
+    { "kkharji/sqlite.lua" }, -- potrzebny do frecency
     {
         --inteligentne szukanie plikow/tekstow
         'nvim-telescope/telescope-frecency.nvim',
         dependencies = { 'nvim-telescope/telescope.nvim', 'kkharji/sqlite.lua' },
     },
-	-- use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion) z nvima. cos z kopiowaniem but dunno
+    -- use("inkarkat/vim-ReplaceWithRegister") -- replace with register contents using motion (gr + motion) z nvima. cos z kopiowaniem but dunno
 
     --   {
     --     'AckslD/nvim-trevJ.lua',

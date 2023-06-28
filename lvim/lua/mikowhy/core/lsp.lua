@@ -21,15 +21,34 @@ lvim.format_on_save.enabled = false
 lvim.format_on_save.pattern = { "*.py" }
 formatters.setup { {name = "prettierd" }, }
 -- -- setup linting
--- local linters = require "lvim.lsp.null-ls.linters"
+local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup { {  name = "pyflakes" },  }
+linters.setup {
+  {
+    exe = "eslint",
+    filetypes = {
+      "javascriptreact",
+      "javascript",
+      "typescriptreact",
+      "typescript",
+      "vue",
+    },
+  },
+}
+
+-- add `pyright` to `skipped_servers` list
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "volar" })
+-- remove `jedi_language_server` from `skipped_servers` list
+lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
+  return server ~= "vuels"
+end, lvim.lsp.automatic_configuration.skipped_servers)
 
 
 require("nvim-treesitter.configs").setup {
   yati = {
     enable = true,
     -- Disable by languages, see `Supported languages`
-    disable = { "lua", "vue" },
+    disable = { "lua", "vue"},
 
     -- Whether to enable lazy mode (recommend to enable this if bad indent happens frequently)
     default_lazy = true,

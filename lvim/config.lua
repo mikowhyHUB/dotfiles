@@ -11,5 +11,4 @@ reload("mikowhy.core.which-key")
 reload("mikowhy.ui.statusline")
 reload("mikowhy.core.lsp")
 reload("mikowhy.core.treesitter")
-
-
+reload("mikowhy.core.telescope")
