@@ -58,13 +58,15 @@ lvim.plugins = {
 
     {
         "folke/persistence.nvim",
-        -- event = "BufReadPre",
+        event = "BufReadPre",
+        lazy = true,
         config = function()
             require("persistence").setup({
-                dir = vim.fn.expand(vim.fn.stdpath "state" .. "/sessions/"),
-                options = { "buffers", "curdir", "tabpages", "winsize" }
+                dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+                options = { "buffers", "curdir", "tabpages", "winsize" },
+                module = "persistence",
             })
-        end
+        end,
     },
     -- gdy jakis blad masz to szybko fixuje te bledy
     {
