@@ -1,5 +1,7 @@
 lvim.builtin.treesitter.ensure_installed = {
 	"bash",
+    "html",
+    "htmldjango",
 	"c",
 	"javascript",
 	"json",
@@ -64,3 +66,10 @@ require("nvim-treesitter.configs").setup {
     enable = false -- disable builtin indent module
   }
 }
+-- htmldjango
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, {  "html" })
+local opts = {
+  filetypes = { "html", "htmldjango" }
+}
+require("lvim.lsp.manager").setup("html", opts)
+

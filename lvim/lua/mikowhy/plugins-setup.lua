@@ -17,7 +17,7 @@ lvim.plugins = {
         cmd = "TroubleToggle",
     },
 
-    {
+    { -- dla roznych plikow rozne taby (vue i python ma inne)
         "FotiadisM/tabset.nvim",
         config = function()
             require("tabset").setup()
@@ -58,7 +58,7 @@ lvim.plugins = {
 
     {
         "folke/persistence.nvim",
-        event = "BufReadPre",
+        event = "BufRead",
         lazy = true,
         config = function()
             require("persistence").setup({
