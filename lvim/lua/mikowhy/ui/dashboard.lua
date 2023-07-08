@@ -15,11 +15,10 @@ local header = {
 local plugins = ""
 local date = ""
 if vim.fn.has("linux") == 1 or vim.fn.has("mac") == 1 then
-    -- -- this no longer works with packer, need to modify to work with lazy.nvim
-    -- dunno wat is this
-    -- local handle = io.popen 'fd -d 2 . $HOME"/.local/share/lunarvim/site/pack/packer" | grep pack | wc -l | tr -d "\n" '
-    -- plugins = handle:read "*a"
-    -- handle:close()
+    -- this no longer works with packer, need to modify to work with lazy.nvim
+    local handle = io.popen 'fd -d 2 . $HOME"/.local/share/lunarvim/site/pack/packer" | grep pack | wc -l | tr -d "\n" '
+    plugins = handle:read "*a"
+    handle:close()
 
     local thingy = io.popen('echo "$(date +%a) $(date +%d) $(date +%b)" | tr -d "\n"')
     date = thingy:read("*a")
@@ -93,15 +92,16 @@ local buttons = {
     val = {
         button("s", " " .. kind.cmp_kind.Default .. " Live grep", ":Telescope live_grep<CR>"),
         button("f", " " .. kind.cmp_kind.Folder .. " Find files", ":Telescope find_files<CR>"),
-        -- button("e", " " .. kind.cmp_kind.File .. " New file", ":ene <BAR> startinsert <CR>"),
-        button("t", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
+        button("e", " " .. kind.cmp_kind.File .. " Explorer", "<cmd>NvimTreeToggle<CR>"),
+        -- button("t", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
+        button("t", " " .. kind.icons.magic .. " Restore", ":SessionLoad<cr>"),
         button(
             "g",
             " " .. kind.icons.git .. " Git Status",
             ":ToggleTerm <CR> git status <CR>"
         ),
         button("r", " " .. kind.icons.clock .. " Recents", ":Telescope oldfiles<CR>"),
-        button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/config.lua<CR>"),
+        button("c", " " .. kind.icons.settings .. " Config", ":e ~/.config/lvim/lua/mikowhy/plugins-setup.lua<CR>"),
         button(
             "C",
             " " .. kind.cmp_kind.Color .. " Colorscheme Config",

@@ -14,6 +14,7 @@ wk.mappings["S"] = {
 -- wk.mappings["l"]["t"] = { ":LvimToggleFormatOnSave<cr>", kind.symbols_outline.File .. " Toggle format-on-save" }
 wk.mappings["l"]["R"] = { ":LspRestart<cr>", kind.icons.exit .. " Restart" }
 wk.mappings["l"]["t"] = { ":TroubleToggle<cr>", kind.icons.screen .. " Wszystkie błędy w pliku" }
+wk.mappings["l"]["A"] = { ":CodeActionMenu<cr>", kind.icons.clock .. "Moje Code Action" }
 
 wk.mappings["s"]["w"] = {
     "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.expand('<cword>') })<cr>",

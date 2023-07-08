@@ -1,0 +1,12 @@
+{
+    "diagnostics.globals": [
+        "vim",
+        "lvim",
+        "reload",
+        "local",
+        "home"
+    ],
+    "diagnostics.disable": [
+        "need-check-nil"
+    ]
+}
