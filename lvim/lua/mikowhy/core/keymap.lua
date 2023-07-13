@@ -2,7 +2,6 @@ local kind = require('mikowhy.ui.kind')
 
 lvim.leader = "space"
 
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 vim.keymap.set('n', 'tt', ":tabnew<CR>") --new tab
@@ -11,11 +10,11 @@ vim.keymap.set('n', 'tc', ":tabclose<CR>")
 vim.keymap.set("i", "jk", "<ESC>")
 vim.keymap.set("n", "x", '"_x')
 vim.keymap.set("n", "X", '"_X')
-vim.keymap.set("n", "dd", '"_dd')
+vim.keymap.set("n", "d", '"_d')
 vim.keymap.set("n", "cw", '"_cw')
--- vim.keymap.set('n', '<leader>lA', ":CodeActionMenu<CR>")
 lvim.keys.visual_mode['<leader>lf'] = "<cmd>lua require('lvim.lsp.utils').format()<cr>"
 lvim.keys.normal_mode["<leader>ss"] = "<cmd>Telescope live_grep<cr>"
+
 -- navigate within insert mode
 lvim.keys.insert_mode["<C-b>"] = "<ESC>^i"
 lvim.keys.insert_mode["<C-n>"] = "<ESC>$" -- nie dziala
@@ -25,10 +24,14 @@ lvim.keys.insert_mode["<C-l>"] = "<Right>"
 lvim.keys.insert_mode["<C-j>"] = "<Down>"
 lvim.keys.insert_mode["<C-k>"] = "<Up>"
 
+lvim.keys.normal_mode["<C-z>"] = "<cmd>:w<cr>" -- koniec wychodzenia przez pomylke
+lvim.keys.normal_mode["<C-s>"] = "<cmd>:w<cr>" --zapisywanie
 -- w visual mode mozessz przesuwac zaznaczone linie gora dol
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 
+vim.keymap.set("n", ">", ">>")
+vim.keymap.set("n", "<", "<<")
 -- PLUGIN KEYMAPS
 -- pokazuje kazde miejsce gdzie slowo pod kursorem sie znajduje
 lvim.lsp.buffer_mappings.normal_mode["gr"] = {

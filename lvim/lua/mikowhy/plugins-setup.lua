@@ -68,7 +68,7 @@ lvim.plugins = {
             require("persisted").setup({
                 save_dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"), -- directory where session files are saved
                 silent = false,                                                   -- silent nvim message when sourcing session file
-                use_git_branch = false,                                           -- create session files based on the branch of the git enabled repository
+                use_git_branch = true,                                           -- create session files based on the branch of the git enabled repository
                 autosave = true,                                                  -- automatically save session files when exiting Neovim
                 should_autosave = nil,                                            -- function to determine if a session should be autosaved
                 autoload = false,                                                 -- automatically load the session for the cwd on Neovim startup
@@ -82,19 +82,19 @@ lvim.plugins = {
             })
         end,
     },
-    {
-        "folke/persistence.nvim",
-        event = "BufRead",
-        lazy = true,
-        config = function()
-            require("persistence").setup({
-                dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
-                options = { "buffers", "curdir", "tabpages", "winsize" },
-                module = "persistence",
-            })
-        end,
-        nested = true,
-    },
+    -- {
+    --     "folke/persistence.nvim",
+    --     event = "BufRead",
+    --     lazy = true,
+    --     config = function()
+    --         require("persistence").setup({
+    --             dir = vim.fn.expand(vim.fn.stdpath "config" .. "/session/"),
+    --             options = { "buffers", "curdir", "tabpages", "winsize" },
+    --             module = "persistence",
+    --         })
+    --     end,
+    --     nested = true,
+    -- },
     -- gdy jakis blad masz to szybko fixuje te bledy
     {
         'weilbith/nvim-code-action-menu',

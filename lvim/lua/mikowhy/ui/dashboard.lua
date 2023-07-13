@@ -94,7 +94,7 @@ local buttons = {
         button("f", " " .. kind.cmp_kind.Folder .. " Find files", ":Telescope find_files<CR>"),
         button("e", " " .. kind.cmp_kind.File .. " Explorer", "<cmd>NvimTreeToggle<CR>"),
         -- button("t", " " .. kind.icons.magic .. " Restore", ":lua require('persistence').load()<cr>"),
-        button("t", " " .. kind.icons.magic .. " Restore", ":SessionLoad<cr>"),
+        button("t", " " .. kind.icons.magic .. " Restore", ":SessionLoadLast<cr>"),
         button(
             "g",
             " " .. kind.icons.git .. " Git Status",
